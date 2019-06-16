@@ -13,6 +13,7 @@ namespace XmpJS {
         xmpGImg:  "http://ns.adobe.com/xap/1.0/g/img/",
         xmpMM:  "http://ns.adobe.com/xap/1.0/mm/",
         xmpTPg:  "http://ns.adobe.com/xap/1.0/t/pg/",
+        xmpDM:  "http://ns.adobe.com/xmp/1.0/DynamicMedia/",
     };
 
     /**
