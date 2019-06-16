@@ -1,6 +1,8 @@
 # XmpJS
 A JavaScript library for extracting [XMP metadata](http://www.adobe.com/products/xmp.html) from files within the browser. This is a port of the [.NET XmpParser library](https://github.com/SunBrandingSolutions/XmpParser).
 
+Forked from https://github.com/SunBrandingSolutions/XmpJS with support to extract XMP cuepoint markers
+
 # Getting the code
 We're still in the early days, so bear with us whilst we set up NPM/Bower packages and so on! For now, you can grab the code directly from this site.
 
@@ -93,6 +95,21 @@ var callback = function (xmp) {
     let list = document.createElement("ul");
     
     fonts.forEach(function (font) {
+    
+    });
+}
+```
+
+### List the cuepoint markers
+We can list all the cuepoint markers embedded in the audio/video file:
+
+```
+var callback = function (xmp) {
+    var markers = XmpJS.getCuePointMarkers(xmp);
+    
+    let list = document.createElement("ul");
+    
+    markers.forEach(function (marker) {
     
     });
 }
