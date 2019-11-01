@@ -27,6 +27,7 @@ namespace XmpJS {
             return null;
 
         // get framerate (frames per second)
+        // e.g. xmpDM:frameRate="f48000"
         let frameRate: number = parseInt(cuePointMarkersElem.attributes.getNamedItemNS(NAMESPACES.xmpDM, "frameRate").value.substr(1));
 
         let markerNodes: XPathResult = xmp.findElements("//rdf:RDF/rdf:Description/xmpDM:Tracks/rdf:Bag/rdf:li/rdf:Description/xmpDM:markers/rdf:Seq//rdf:li/rdf:Description");
@@ -36,9 +37,19 @@ namespace XmpJS {
         while (el) {
             let markerElement = el as Element;
 
+            // get marker startTime
+            let markerStartTime: string = markerElement.attributes.getNamedItemNS(NAMESPACES.xmpDM, "startTime").value;
+            let markerFrameRate: number = frameRate;
+
+            // marker startTime may contain a custom framerate, override the parent framerate
+            // e.g. xmpDM:startTime="4801365"
+            if (markerStartTime.indexOf('f') !== -1) {
+                markerFrameRate = parseInt(markerStartTime.substr(markerStartTime.indexOf('f')).substr(1));
+            }
+
             markers.push({
                 name: markerElement.attributes.getNamedItemNS(NAMESPACES.xmpDM, "name").value,
-                timestamp: parseInt(markerElement.attributes.getNamedItemNS(NAMESPACES.xmpDM, "startTime").value) / frameRate * 1000
+                timestamp: parseInt(markerStartTime) / markerFrameRate * 1000
             });
 
             el = markerNodes.iterateNext();
