@@ -20,7 +20,7 @@ var XmpJS;
      * Contains a single XMP document, wrapping the inner XML and providing
      * methods to query the inner data.
      */
-    var XmpDocument = (function () {
+    var XmpDocument = /** @class */ (function () {
         /**
          * Initializes a new XMP document object.
          * @param xml XML document to read from.
@@ -116,8 +116,8 @@ var XmpJS;
     }
     XmpJS.mapElements = mapElements;
 })(XmpJS || (XmpJS = {}));
-/// <reference path="xmp.ts" /> 
-/// <reference path="xmp.ts" /> 
+/// <reference path="xmp.ts" />
+/// <reference path="xmp.ts" />
 /// <reference path="xmp.ts" />
 var XmpJS;
 (function (XmpJS) {
@@ -134,7 +134,7 @@ var XmpJS;
     XmpJS.getFonts = getFonts;
 })(XmpJS || (XmpJS = {}));
 /// <reference path="xmp.ts" />
-/// <reference path="xmp.ts" /> 
+/// <reference path="xmp.ts" />
 /// <reference path="xmp.ts" />
 var XmpJS;
 (function (XmpJS) {

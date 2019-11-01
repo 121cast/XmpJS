@@ -119,14 +119,14 @@ namespace XmpJS {
     export function loadXmpFromFile(file: File, callback: (xml: XmpDocument) => void): void {
         const XMP_START: string = "<x:xmpmeta",
               XMP_END  : string = "</x:xmpmeta>",
-              DOC_TYPE : string = "text/xml",
+              DOC_TYPE : SupportedType = "text/xml",
 			  reader   : FileReader = new FileReader();
 
         reader.onload = (e: Event) => {
             // load the XMP by sub-stringing the stringified binary data; seems
             // clunky but is actually quite fast in most browsers; cleverer people
             // might be able to do this using an ArrayBuffer for greater efficiency
-            let str: string = (<FileReader>e.target).result,
+            let str: string = <string>(<FileReader>e.target).result,
 			    doc: Document = null;
 
             // work out where the XML data sits within the file
@@ -148,7 +148,7 @@ namespace XmpJS {
         let child: Node;
         for (let i: number = 0; i < parent.childNodes.length; i++) {
             child = parent.childNodes[i];
-            if (child.nodeType === Node.ELEMENT_NODE && child.localName === name) {
+            if (child.nodeType === Node.ELEMENT_NODE && (<Element>child).localName === name) {
                 return <Element>child;
             }
         }

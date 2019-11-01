@@ -36,11 +36,11 @@ namespace XmpJS {
                     });
                 }
             } else {
-                let imageAttr: Attr = el.attributes.getNamedItemNS(NAMESPACES.xmpGImg, "image");
+                let imageAttr: Attr = (<Element>el).attributes.getNamedItemNS(NAMESPACES.xmpGImg, "image");
                 if (imageAttr) {
-                    let format: Attr  = el.attributes.getNamedItemNS(NAMESPACES.xmpGImg, "format");
-                    let width: Attr = el.attributes.getNamedItemNS(NAMESPACES.xmpGImg, "width");
-                    let height: Attr  = el.attributes.getNamedItemNS(NAMESPACES.xmpGImg, "height");
+                    let format: Attr  = (<Element>el).attributes.getNamedItemNS(NAMESPACES.xmpGImg, "format");
+                    let width: Attr = (<Element>el).attributes.getNamedItemNS(NAMESPACES.xmpGImg, "width");
+                    let height: Attr  = (<Element>el).attributes.getNamedItemNS(NAMESPACES.xmpGImg, "height");
                     thumbnails.push({
                         image: imageAttr.value,
                         format: format.value,
