@@ -1,13 +1,13 @@
 {
   "name": "@121cast/xmp-js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Javascript library for parsing XMP metadata.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/121cast/XmpJS.git"
   },
   "main": "./dist/main.js",
-  "types": "./dist/xmp.d.ts",
+  "types": "./dist/main.d.ts",
   "author": "Sun Branding Solutions",
   "license": "MIT",
   "bugs": {
