@@ -1,12 +1,12 @@
 {
   "name": "@121cast/xmp-js",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Javascript library for parsing XMP metadata.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/121cast/XmpJS.git"
   },
-  "main": "./dist/xmp.js",
+  "main": "./dist/main.js",
   "types": "./dist/xmp.d.ts",
   "author": "Sun Branding Solutions",
   "license": "MIT",
@@ -15,13 +15,9 @@
   },
   "homepage": "https://github.com/SunBrandingSolutions/XmpJS#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-rimraf": "^0.2.0",
-    "gulp-tslint": "^6.0.2",
-    "gulp-typescript": "^2.13.6",
-    "gulp-uglify": "^2.0.0",
-    "merge2": "^1.0.2"
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }

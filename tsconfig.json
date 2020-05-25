@@ -1,13 +1,11 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "outFile": "dist/xmp.js",
     "declaration": true,
     "removeComments": false,
+    "module": "ES6",
+    "outDir": "dist",
     "target": "ES5",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
   },
   "include": [
       "src/**/*.ts"
