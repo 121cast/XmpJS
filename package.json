@@ -1,6 +1,6 @@
 {
   "name": "@121cast/xmp-js",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Javascript library for parsing XMP metadata.",
   "repository": {
     "type": "git",
