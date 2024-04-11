@@ -8,6 +8,9 @@
   },
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "Sun Branding Solutions",
   "license": "MIT",
   "bugs": {
