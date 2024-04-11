@@ -1,4 +1,7 @@
-export var NAMESPACES = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.mapElements = exports.getChildElement = exports.loadXmpFromFile = exports.XmpDocument = exports.NAMESPACES = void 0;
+exports.NAMESPACES = {
     dc: "http://purl.org/dc/elements/1.1/",
     illustrator: "http://ns.adobe.com/illustrator/1.0/",
     pdf: "http://ns.adobe.com/pdf/1.3/",
@@ -33,7 +36,7 @@ var XmpDocument = /** @class */ (function () {
         * can find a better solution!
         */
         this._resolver = function (prefix) {
-            return NAMESPACES[prefix] || "";
+            return exports.NAMESPACES[prefix] || "";
         };
     }
     /**
@@ -69,13 +72,13 @@ var XmpDocument = /** @class */ (function () {
     };
     return XmpDocument;
 }());
-export { XmpDocument };
+exports.XmpDocument = XmpDocument;
 /**
  * Extracts the XMP metadata from a file input.
  * @param file The read to read from.
  * @param callback The callback to run with the extracted XML document.
  */
-export function loadXmpFromFile(file, callback) {
+function loadXmpFromFile(file, callback) {
     var XMP_START = "<x:xmpmeta", XMP_END = "</x:xmpmeta>", DOC_TYPE = "text/xml", reader = new FileReader();
     reader.onload = function (e) {
         // load the XMP by sub-stringing the stringified binary data; seems
@@ -92,7 +95,8 @@ export function loadXmpFromFile(file, callback) {
     };
     reader.readAsText(file);
 }
-export function getChildElement(parent, name) {
+exports.loadXmpFromFile = loadXmpFromFile;
+function getChildElement(parent, name) {
     var child;
     for (var i = 0; i < parent.childNodes.length; i++) {
         child = parent.childNodes[i];
@@ -102,7 +106,8 @@ export function getChildElement(parent, name) {
     }
     return null;
 }
-export function mapElements(xmp, expression, mapping) {
+exports.getChildElement = getChildElement;
+function mapElements(xmp, expression, mapping) {
     var results = [], xpath = xmp.findElements(expression), node = xpath.iterateNext();
     while (node) {
         results.push(mapping(node));
@@ -110,3 +115,4 @@ export function mapElements(xmp, expression, mapping) {
     }
     return results;
 }
+exports.mapElements = mapElements;
