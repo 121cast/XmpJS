@@ -1,11 +1,9 @@
-name: Node.js Package
+name: Build
 
-on:
-  release:
-    types: [created]
+on: [push, pull_request]
 
 jobs:
-  publish-gpr:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,6 +15,3 @@ jobs:
       - name: Build
         run: |
           npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

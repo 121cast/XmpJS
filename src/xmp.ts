@@ -118,7 +118,7 @@ export class XmpDocument {
 export function loadXmpFromFile(file: File, callback: (xml: XmpDocument) => void): void {
     const XMP_START: string = "<x:xmpmeta",
         XMP_END: string = "</x:xmpmeta>",
-        DOC_TYPE: SupportedType = "text/xml",
+        DOC_TYPE: DOMParserSupportedType = "text/xml",
         reader: FileReader = new FileReader();
 
     reader.onload = (e: Event) => {

@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/SunBrandingSolutions/XmpJS#readme",
   "devDependencies": {
-    "typescript": "^3.9.3"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "build": "tsc"
