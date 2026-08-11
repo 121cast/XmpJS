@@ -3,9 +3,11 @@
   "compilerOptions": {
     "declaration": true,
     "removeComments": false,
+    "strict": false,
     "module": "CommonJS",
+    "rootDir": "./src",
     "outDir": "dist",
-    "target": "ES5",
+    "target": "ES6",
   },
   "include": [
       "src/**/*.ts"
